@@ -36,6 +36,7 @@ class Router implements \Magento\Framework\App\RouterInterface
         $url_key = trim($request->getPathInfo(), '/testimonial/');
         $url_key = rtrim($url_key, '/');
 
+
         /** @var \V3N0m21\Testimonials\Model\Testimonial $testimonial */
         $testimonial = $this->_testimonialFactory->create();
         $testimonial_id = $testimonial->getById($url_key);
@@ -47,5 +48,6 @@ class Router implements \Magento\Framework\App\RouterInterface
         $request->setAlias(\Magento\Framework\Url::REWRITE_REQUEST_PATH_ALIAS, $url_key);
 
         return $this->actionFactory->create('Magento\Framework\App\Action\Forward');
-    }
+        }
+
 }

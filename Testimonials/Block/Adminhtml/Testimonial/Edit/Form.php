@@ -75,17 +75,17 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
             ['name' => 'title', 'label' => __('Testimonial Title'), 'title' => __('Testimonial Title'), 'required' => true]
         );
 
-//        $fieldset->addField(
-//            'url_key',
-//            'text',
-//            [
-//                'name' => 'url_key',
-//                'label' => __('URL Key'),
-//                'title' => __('URL Key'),
-//                'required' => true,
-//                'class' => 'validate-xml-identifier'
-//            ]
-//        );
+        $fieldset->addField(
+            'user_id',
+            'text',
+            [
+                'name' => 'user_id',
+                'label' => __('User Id'),
+                'title' => __('User Id'),
+                'required' => true,
+                'class' => 'validate-digits'
+            ]
+        );
 
         $fieldset->addField(
             'is_active',

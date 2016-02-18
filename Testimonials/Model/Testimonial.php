@@ -3,6 +3,9 @@ namespace V3N0m21\Testimonials\Model;
 
 use V3N0m21\Testimonials\Api\Data\TestimonialInterface;
 use Magento\Framework\DataObject\IdentityInterface;
+use Magento\Framework\App\ObjectManager;
+
+
 
 class Testimonial extends \Magento\Framework\Model\AbstractModel implements TestimonialInterface, IdentityInterface
 {
@@ -131,6 +134,25 @@ class Testimonial extends \Magento\Framework\Model\AbstractModel implements Test
     {
         return $this->getData(self::UPDATE_TIME);
     }
+
+    /**
+     * Get created By
+     *
+     * @return string|null
+     */
+    public function getCreatedBy()
+    {
+        $user = $this->getData(self::USER_ID);
+        $objectManager = ObjectManager::getInstance();
+        $customerRepository =  $objectManager->get('Magento\Customer\Api\CustomerRepositoryInterface');
+        $customer = $customerRepository->getById($user);
+        $customerFullName = $customer->getFirstname() . " " . $customer->getLastname();
+
+
+
+        return $customerFullName;
+    }
+
 
     /**
      * Is active

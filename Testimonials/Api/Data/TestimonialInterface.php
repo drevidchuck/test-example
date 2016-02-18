@@ -4,6 +4,7 @@ namespace V3N0m21\Testimonials\Api\Data;
 interface TestimonialInterface
 {
 	const TESTIMONIAL_ID = 'testimonial_id';
+    const USER_ID = 'user_id';
 	const TITLE = 'title';
 	const CONTENT = 'content';
 	const CREATION_TIME = 'creation_time';
