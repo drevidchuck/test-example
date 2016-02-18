@@ -1,5 +1,5 @@
 <?php
-namespace V3N0m21\Testimonials\Controller\Adminhtml\Post;
+namespace V3N0m21\Testimonials\Controller\Adminhtml\Testimonial;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;

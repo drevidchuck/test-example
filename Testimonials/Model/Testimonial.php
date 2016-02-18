@@ -150,7 +150,7 @@ class Testimonial extends \Magento\Framework\Model\AbstractModel implements Test
      */
     public function setId($id)
     {
-        return $this->setData(self::POST_ID, $id);
+        return $this->setData(self::TESTIMONIAL_ID, $id);
     }
 
     /**
