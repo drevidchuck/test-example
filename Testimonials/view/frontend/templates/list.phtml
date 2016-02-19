@@ -2,7 +2,8 @@
 <h1><?php echo __('Latest Testimonials') ?></h1>
 <ul class="testimonials-testimonial-list">
     <?php /** @var $testimonial \V3N0m21\Testimonials\Model\Testimonial */ ?>
-    <a href="/testimonials/new">New Testimonial</a>
+    <?php if($block->isAuthorized()) { echo "<a href=\"/testimonials/create\">New Testimonial</a>";} ?>
+
     <?php foreach ($block->getTestimonials() as $testimonial): ?>
         <li class="testimonials-testimonial-list-item">
             <h3 class="testimonials-testimonial-item-title">

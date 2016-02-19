@@ -56,4 +56,11 @@ class TestimonialList extends \Magento\Framework\View\Element\Template implement
     {
         return [\V3N0m21\Testimonials\Model\Testimonial::CACHE_TAG . '_' . 'list'];
     }
+
+    public function isAuthorized() {
+        $om = \Magento\Framework\App\ObjectManager::getInstance();
+        $session = $om->get('Magento\Framework\App\Http\Context');
+        $isLoggedIn = $session->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+        return $isLoggedIn;
+    }
 }
